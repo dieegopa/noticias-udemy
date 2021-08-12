@@ -10,7 +10,7 @@ function App() {
   React.useEffect(() => {
     const consultarAPI = async () => {
       try {
-        const url = `http://newsapi.org/v2/top-headlines?country=mx&category=${categoria}&apiKey=7053f16d9d8c4162b3e25d99b7b3cd00`
+        const url = `http://newsapi.org/v2/top-headlines?country=mx&category=${categoria}&apiKey=${process.env.REACT_APP_NOTICIAS_API_KEY}`
         const respuesta = await fetch(url)
         const noticias = await respuesta.json()
         setNoticias(noticias.articles)
